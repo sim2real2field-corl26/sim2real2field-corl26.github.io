@@ -126,9 +126,15 @@ strong { font-weight: 700; }
   display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 36px;
 }
 .org-grid li {
-  display: flex; flex-direction: column;
+  display: flex; flex-direction: row; align-items: center; gap: 14px;
   padding: 14px 0; border-bottom: 1px solid var(--line);
 }
+.avatar {
+  width: 68px; height: 68px; flex: 0 0 auto;
+  border-radius: 50%; object-fit: cover; object-position: center top;
+  background: var(--soft); border: 1px solid var(--line);
+}
+.person-info { display: flex; flex-direction: column; min-width: 0; }
 .org-name { font-weight: 700; color: var(--ink); }
 a.org-name {
   color: var(--ink); text-decoration: none;
