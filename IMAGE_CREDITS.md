@@ -12,7 +12,7 @@ correct person and that you're comfortable using it before treating the site as 
 | jonas-frey.jpg | Jonas Frey | Stanford / UC Berkeley | https://jonasfrey96.github.io/ |
 | rosario-scalise.jpg | Rosario Scalise | University of Washington | https://rosarioscalise.com/ |
 | bike-zhang.jpg | Bike Zhang | UC Berkeley | IROS 2023 Humanoid workshop speaker page (own homepage has no photo) |
-| siming-he.png | Siming He | UC Berkeley (PhD); UPenn (prior) | Wharton SPUR 2022 feature (own/Berkeley pages have no live photo) |
+| siming-he.jpg | Siming He | UC Berkeley (PhD); UPenn (prior) | LinkedIn profile photo (https://www.linkedin.com/in/siming-he/, og:image, 200x200) |
 | aayam-shrestha.jpg | Aayam Shrestha | Oregon State University | https://engineering.oregonstate.edu/people/aayam-shrestha |
 | skand-peri.jpg | Skand Peri | Oregon State -> UT Austin (incoming) | https://pvskand.github.io/ |
 | yue-hu.jpg | Yue Hu | University of Michigan | https://phyllish.github.io/ |
@@ -33,5 +33,4 @@ correct person and that you're comfortable using it before treating the site as 
 ## Notes / lower-quality sources to revisit
 - **bike-zhang**: only ~202x230 available (third-party workshop page); a higher-res photo would be better.
 - **rosario-scalise**: source was 150x150; replace with a larger headshot if you have one.
-- **siming-he**: photo is from his UPenn alma-mater page (2022); a current Berkeley-era photo would be more accurate.
 - **arjun-krishna** / **michael-lutter**: transparent-background PNGs (render fine inside the circular avatar).
