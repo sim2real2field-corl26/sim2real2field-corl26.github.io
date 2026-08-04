@@ -39,28 +39,49 @@ a:hover { color: var(--gold-d); text-decoration: underline; text-underline-offse
 .field { color: var(--blue); font-weight: 700; }
 .two   { color: var(--gold); font-weight: 700; }
 
-/* ===== Nav ===== */
+/* ===== Nav (journal masthead) ===== */
 .nav {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(255,253,247,0.88);
+  background: rgba(255,253,247,0.92);
   backdrop-filter: saturate(160%) blur(8px);
   border-bottom: 1px solid var(--line);
 }
-.nav-inner {
-  max-width: var(--maxw); margin: 0 auto; padding: 13px 28px;
-  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+.masthead { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; text-align: center; }
+/* brand tier collapses (grid-template-rows 1fr -> 0fr) once the hero scrolls past */
+.masthead-brand {
+  display: grid; grid-template-rows: 1fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.brand { font-size: 1.2rem; letter-spacing: -0.01em; white-space: nowrap; }
-.nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.masthead-brand-inner { overflow: hidden; min-height: 0; }
+.nav.compact .masthead-brand { grid-template-rows: 0fr; }
+.brand {
+  display: inline-block; padding: 14px 0 5px;
+  font-size: 1.45rem; letter-spacing: -0.01em; white-space: nowrap;
+}
+.brand:hover { text-decoration: none; }
+.nav-links {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.35s ease;
+}
+.nav.compact .nav-links { border-top-color: transparent; }
 .nav-links a {
-  color: var(--muted); font-size: 0.82rem; font-weight: 600;
+  position: relative; margin: 0 13px; padding: 9px 1px 10px;
+  color: var(--muted); font-size: 0.8rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.08em;
+  border-bottom: 2px solid transparent;
 }
 .nav-links a:hover { color: var(--blue); text-decoration: none; }
+/* middot separators, kept outside the link's underline */
+.nav-links a:not(:last-child)::after {
+  content: "\00B7"; position: absolute; right: -16px; top: 9px;
+  color: var(--muted); opacity: 0.4; pointer-events: none;
+}
+.nav-links a.active { color: var(--blue); border-bottom-color: var(--gold); }
 
 /* ===== Floating CfP button ===== */
 .cfp-fab {
-  position: fixed; top: 66px; right: 22px; z-index: 9;
+  position: fixed; bottom: 22px; right: 22px; z-index: 9;
   display: inline-block; padding: 9px 18px; border-radius: 999px;
   background: var(--gold); color: var(--ink);
   font-size: 0.8rem; font-weight: 700;
@@ -214,8 +235,10 @@ a.org-name:hover {
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
   body { font-size: 1.1rem; }
-  .nav-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .cfp-fab { top: auto; bottom: 18px; right: 16px; }
+  .brand { font-size: 1.25rem; padding: 12px 0 3px; }
+  .nav-links a { margin: 0 9px; font-size: 0.72rem; }
+  .nav-links a:not(:last-child)::after { right: -12px; top: 10px; }
+  .cfp-fab { bottom: 18px; right: 16px; }
   .section { scroll-margin-top: 96px; }
   .org-grid, .info-grid { grid-template-columns: 1fr; }
   .org-grid li { padding: 12px 0; }

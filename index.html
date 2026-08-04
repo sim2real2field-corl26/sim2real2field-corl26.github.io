@@ -9,24 +9,28 @@
 </head>
 <body>
 
-  <!-- ===== Nav ===== -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="#top"><span class="sim">Sim</span><span class="two">2</span><span class="real">Real</span><span class="two">2</span><span class="field">Field</span></a>
-      <nav class="nav-links">
+  <!-- ===== Nav (journal masthead) ===== -->
+  <header class="nav" id="nav">
+    <div class="masthead">
+      <div class="masthead-brand">
+        <div class="masthead-brand-inner">
+          <a class="brand" href="#top"><span class="sim">Sim</span><span class="two">2</span><span class="real">Real</span><span class="two">2</span><span class="field">Field</span></a>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Sections">
         <a href="#about">About</a>
-        <a href="#cfp">Call</a>
+        <a href="#cfp">Call for Papers</a>
         <a href="#program">Program</a>
         <a href="#speakers">Speakers</a>
-        <a href="https://openreview.net/group?id=robot-learning.org%2FCoRL%2F2026%2FWorkshop%2FSim2Real2Field" target="_blank" rel="noopener">OpenReview</a>
         <a href="#organizers">Organizers</a>
         <a href="#info">Info</a>
+        <a href="https://openreview.net/group?id=robot-learning.org%2FCoRL%2F2026%2FWorkshop%2FSim2Real2Field" target="_blank" rel="noopener">OpenReview&nbsp;&#8599;</a>
       </nav>
     </div>
   </header>
 
   <!-- ===== Floating CfP button ===== -->
-  <a class="cfp-fab" href="#cfp">Call for Papers&nbsp;&darr;</a>
+  <a class="cfp-fab" href="#cfp">Call for Papers</a>
 
   <!-- ===== Hero ===== -->
   <section id="top" class="hero">
@@ -186,6 +190,34 @@
       <p class="footer-links"><a href="https://www.corl.org/" target="_blank" rel="noopener">CoRL 2026</a></p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      var hero = document.getElementById('top');
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+      var byId = {};
+      links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+
+      // Compact masthead once the hero has scrolled past
+      new IntersectionObserver(function (entries) {
+        nav.classList.toggle('compact', !entries[0].isIntersecting);
+      }, { rootMargin: '-70px 0px 0px 0px' }).observe(hero);
+
+      // Scrollspy: gold underline follows the section in view
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) { a.classList.remove('active'); });
+          if (byId[e.target.id]) byId[e.target.id].classList.add('active');
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      Object.keys(byId).forEach(function (id) {
+        var s = document.getElementById(id);
+        if (s) spy.observe(s);
+      });
+    })();
+  </script>
 
 </body>
 </html>
