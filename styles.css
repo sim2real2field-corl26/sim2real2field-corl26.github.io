@@ -103,14 +103,30 @@ a:hover { color: var(--gold-d); text-decoration: underline; text-underline-offse
 }
 .hero-sub {
   font-size: clamp(1.15rem, 3vw, 1.6rem);
-  color: var(--ink); font-weight: 600; font-style: italic; margin: 0 0 20px;
+  color: var(--ink); font-weight: 600; font-style: italic; margin: 0 0 10px;
 }
-.hero-meta { color: var(--muted); font-size: 1.02rem; margin: 0 0 18px; }
 .hero-tagline {
-  max-width: 580px; margin: 0 auto; color: var(--ink);
-  font-size: 1.12rem; font-style: italic;
+  max-width: 580px; margin: 0 auto; color: var(--muted); font-size: 1.05rem;
 }
-.hero-cta { margin: 26px 0 0; }
+.hero-facts {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  max-width: 640px; margin: 40px auto 0; padding: 22px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.hero-facts > div { padding: 0 16px; }
+.hero-facts > div + div { border-left: 1px solid var(--line); }
+.hero-facts dt {
+  margin: 0 0 8px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--gold-d);
+}
+.hero-facts dd { margin: 0; color: var(--ink); font-size: 1rem; line-height: 1.45; }
+.hero-facts dd + dd { color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 600px) {
+  .hero-facts { grid-template-columns: 1fr; padding: 4px 0; }
+  .hero-facts > div { padding: 14px 0; }
+  .hero-facts > div + div { border-left: 0; border-top: 1px solid var(--line); }
+}
+.hero-cta { margin: 32px 0 0; }
 .btn {
   display: inline-block; padding: 10px 22px; border-radius: 3px;
   background: var(--blue); color: #fffdf7; font-weight: 700;
@@ -246,12 +262,7 @@ a.org-name:hover {
   .section { padding: 52px 0; }
 }
 .cal-links { color: var(--muted); font-size: 0.9em; }
-.hero-deadline {
-  display: inline-block; margin: 0 0 18px; padding: 6px 14px;
-  border: 1px solid var(--gold); border-radius: 999px; background: var(--soft);
-  font-size: 1rem; color: var(--ink);
+.award {
+  margin: 18px 0; padding: 10px 14px; border-left: 3px solid var(--gold);
+  background: var(--bg); color: var(--ink);
 }
-.hero-deadline .deadline-label {
-  color: var(--gold-d); font-variant: small-caps; letter-spacing: 0.04em; margin-right: 6px;
-}
-.hero-deadline a { font-weight: 600; }
