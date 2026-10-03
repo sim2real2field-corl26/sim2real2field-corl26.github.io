@@ -19,8 +19,8 @@ This repo is named **`sim2real2field-corl26.github.io`** under the org
 2. Settings → Pages → Source: deploy from a branch, default branch / root.
 
 ## Placeholders to fill before going fully public
-- Confirm the **date** and **location** of CoRL 2026 (Hero + Info, currently TBA).
-- Add the **CFP submission portal + deadlines** (Call section).
+- ~~Confirm the **date** and **location** of CoRL 2026~~ — done: Nov 12, 2026, JW Marriott Austin (per corl.org call for workshops).
+- ~~Add the **CFP submission portal + deadlines**~~ — OpenReview portal live; paper deadline Oct 8, 2026 11:59 PM AoE (hero + Call section).
 - Link organizer/speaker homepages where available (some are plain text for now).
 
 ## Notes

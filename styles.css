@@ -245,3 +245,13 @@ a.org-name:hover {
   .hero { padding: 72px 0 52px; }
   .section { padding: 52px 0; }
 }
+.cal-links { color: var(--muted); font-size: 0.9em; }
+.hero-deadline {
+  display: inline-block; margin: 0 0 18px; padding: 6px 14px;
+  border: 1px solid var(--gold); border-radius: 999px; background: var(--soft);
+  font-size: 1rem; color: var(--ink);
+}
+.hero-deadline .deadline-label {
+  color: var(--gold-d); font-variant: small-caps; letter-spacing: 0.04em; margin-right: 6px;
+}
+.hero-deadline a { font-weight: 600; }

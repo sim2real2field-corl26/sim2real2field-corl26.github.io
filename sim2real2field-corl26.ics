@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sim2Real2Field//CoRL 2026 Workshop//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:sim2real2field-corl26-20261112@sim2real2field-corl26.github.io
+DTSTAMP:20261003T000000Z
+DTSTART:20261112T143000Z
+DTEND:20261112T190000Z
+SUMMARY:Sim2Real2Field Workshop @ CoRL 2026
+LOCATION:JW Marriott Austin\, 110 E 2nd St\, Austin\, TX 78701
+DESCRIPTION:Sim-to-Real-to-Field: The Science of Transfer — half-day works
+ hop at CoRL 2026. https://sim2real2field-corl26.github.io/
+URL:https://sim2real2field-corl26.github.io/
+END:VEVENT
+END:VCALENDAR
