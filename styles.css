@@ -266,3 +266,14 @@ a.org-name:hover {
   margin: 18px 0; padding: 10px 14px; border-left: 3px solid var(--gold);
   background: var(--bg); color: var(--ink);
 }
+/* ===== CfP tracks ===== */
+.cfp-subhead { font-size: 1.25rem; color: var(--blue); margin: 32px 0 8px; }
+.tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 20px; }
+.track { background: var(--bg); border: 1px solid var(--line); border-top: 3px solid var(--blue); border-radius: 4px; padding: 16px 20px; }
+.track p { margin: 0; }
+.track-name { font-weight: 700; color: var(--blue); font-size: 1.08rem; }
+.track-limit {
+  margin: 4px 0 10px !important; font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--gold-d);
+}
+@media (max-width: 600px) { .tracks { grid-template-columns: 1fr; } }
