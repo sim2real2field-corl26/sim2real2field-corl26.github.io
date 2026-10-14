@@ -262,18 +262,26 @@ a.org-name:hover {
   .section { padding: 52px 0; }
 }
 .cal-links { color: var(--muted); font-size: 0.9em; }
-.award {
-  margin: 18px 0; padding: 10px 14px; border-left: 3px solid var(--gold);
-  background: var(--bg); color: var(--ink);
+/* ===== CfP details ===== */
+.cfp-details {
+  display: grid; grid-template-columns: 7.5rem 1fr;
+  margin: 28px 0 0; border-top: 1px solid var(--line);
 }
-/* ===== CfP tracks ===== */
-.cfp-subhead { font-size: 1.25rem; color: var(--blue); margin: 32px 0 8px; }
-.tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 20px; }
-.track { background: var(--bg); border: 1px solid var(--line); border-top: 3px solid var(--blue); border-radius: 4px; padding: 16px 20px; }
-.track p { margin: 0; }
-.track-name { font-weight: 700; color: var(--blue); font-size: 1.08rem; }
-.track-limit {
-  margin: 4px 0 10px !important; font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--gold-d);
+.cfp-details dt, .cfp-details dd { padding: 14px 0; border-bottom: 1px solid var(--line); margin: 0; }
+.cfp-details dt {
+  font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--gold-d); padding-top: 18px;
 }
-@media (max-width: 600px) { .tracks { grid-template-columns: 1fr; } }
+.cfp-details .muted { color: var(--muted); }
+.tracks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tracks .pages {
+  margin-left: 6px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--gold-d);
+}
+.callout-slim { padding: 12px 18px; margin: 24px 0 0; }
+@media (max-width: 600px) {
+  .cfp-details { grid-template-columns: 1fr; }
+  .cfp-details dt { border-bottom: 0; padding: 14px 0 0; }
+  .cfp-details dd { padding-top: 4px; }
+  .tracks { grid-template-columns: 1fr; gap: 10px; }
+}
