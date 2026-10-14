@@ -30,7 +30,7 @@
   </header>
 
   <!-- ===== Floating CfP button ===== -->
-  <a class="cfp-fab" href="#cfp">Call for Papers</a>
+  <a class="cfp-fab" id="cfp-fab" href="#cfp">Call for Papers</a>
 
   <!-- ===== Hero ===== -->
   <section id="top" class="hero">
@@ -107,7 +107,7 @@
         learned from practical deployments, and system-building experiences</strong>. Selected
         submissions are featured as interactive poster sessions to maximize discussion.
       </p>
-      <dl class="cfp-details">
+      <dl class="details">
         <dt>Deadline</dt>
         <dd><strong>October 15, 2026, 11:59 PM Central Time</strong> <span class="muted">(Austin, CDT / UTC&minus;5)</span></dd>
         <dt>Tracks</dt>
@@ -194,12 +194,17 @@
   <section id="info" class="section section-soft">
     <div class="container">
       <h2>Information</h2>
-      <div class="info-grid">
-        <div class="info-item"><span class="info-label">Venue</span><span>CoRL 2026 &middot; <a href="https://www.corl.org/#h.11c48c5a07c6b5b_60" target="_blank" rel="noopener" title="CoRL 2026 venue information">JW Marriott Austin, 110 E 2nd St, Austin, TX</a></span></div>
-        <div class="info-item"><span class="info-label">Date</span><span><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sim2Real2Field%20Workshop%20%40%20CoRL%202026&dates=20261112T083000/20261112T130000&ctz=America/Chicago&location=JW%20Marriott%20Austin%2C%20110%20E%202nd%20St%2C%20Austin%2C%20TX%2078701&details=Sim-to-Real-to-Field%3A%20The%20Science%20of%20Transfer%20%E2%80%94%20half-day%20workshop%20at%20CoRL%202026.%20https%3A%2F%2Fsim2real2field-corl26.github.io%2F" target="_blank" rel="noopener" title="Add to Google Calendar">Thursday, November 12, 2026</a> <span class="tba-inline">(workshop day, after the main conference)</span> <span class="cal-links">&middot; <a href="sim2real2field-corl26.ics" download title="Download .ics (Apple, Outlook)">.ics</a> for Apple/Outlook</span></span></div>
-        <div class="info-item"><span class="info-label">Format</span><span>Half-day, in-person</span></div>
-        <div class="info-item"><span class="info-label">Proceedings</span><span>Non-archival</span></div>
-      </div>
+      <dl class="details">
+        <dt>Date</dt>
+        <dd><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sim2Real2Field%20Workshop%20%40%20CoRL%202026&dates=20261112T083000/20261112T130000&ctz=America/Chicago&location=JW%20Marriott%20Austin%2C%20110%20E%202nd%20St%2C%20Austin%2C%20TX%2078701&details=Sim-to-Real-to-Field%3A%20The%20Science%20of%20Transfer%20%E2%80%94%20half-day%20workshop%20at%20CoRL%202026.%20https%3A%2F%2Fsim2real2field-corl26.github.io%2F" target="_blank" rel="noopener" title="Add to Google Calendar">Thursday, November 12, 2026</a>, 8:30 AM to 1:00 PM Central <span class="muted">(workshop day, after the main conference)</span>
+          <span class="cal-links">Add to calendar: <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sim2Real2Field%20Workshop%20%40%20CoRL%202026&dates=20261112T083000/20261112T130000&ctz=America/Chicago&location=JW%20Marriott%20Austin%2C%20110%20E%202nd%20St%2C%20Austin%2C%20TX%2078701&details=Sim-to-Real-to-Field%3A%20The%20Science%20of%20Transfer%20%E2%80%94%20half-day%20workshop%20at%20CoRL%202026.%20https%3A%2F%2Fsim2real2field-corl26.github.io%2F" target="_blank" rel="noopener">Google</a> &middot; <a href="sim2real2field-corl26.ics" download>Apple / Outlook (.ics)</a></span></dd>
+        <dt>Venue</dt>
+        <dd><a href="https://www.corl.org/#h.11c48c5a07c6b5b_60" target="_blank" rel="noopener" title="CoRL 2026 venue information">JW Marriott Austin</a>, 110 E 2nd St, Austin, TX <span class="muted">(CoRL 2026)</span></dd>
+        <dt>Format</dt>
+        <dd>Half-day, in-person</dd>
+        <dt>Proceedings</dt>
+        <dd>Non-archival</dd>
+      </dl>
       <p class="contact">
         Contact: <a href="mailto:rosario@cs.washington.edu">rosario@cs.washington.edu</a>
       </p>
@@ -227,12 +232,30 @@
         nav.classList.toggle('compact', !entries[0].isIntersecting);
       }, { rootMargin: '-70px 0px 0px 0px' }).observe(hero);
 
+      // Floating CfP button: only shown when neither the hero nor the CfP is on screen
+      var fab = document.getElementById('cfp-fab');
+      var cfp = document.getElementById('cfp');
+      var onScreen = {};
+      fab.classList.add('is-hidden');
+      var fabObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { onScreen[e.target.id] = e.isIntersecting; });
+        fab.classList.toggle('is-hidden', !!(onScreen.top || onScreen.cfp));
+      });
+      fabObs.observe(hero); fabObs.observe(cfp);
+
       // Scrollspy: gold underline follows the section in view
       var spy = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (!e.isIntersecting) return;
           links.forEach(function (a) { a.classList.remove('active'); });
-          if (byId[e.target.id]) byId[e.target.id].classList.add('active');
+          var a = byId[e.target.id];
+          if (!a) return;
+          a.classList.add('active');
+          // On narrow screens the nav scrolls sideways; keep the active link visible
+          var bar = a.parentNode;
+          if (bar.scrollWidth > bar.clientWidth) {
+            bar.scrollTo({ left: a.offsetLeft - (bar.clientWidth - a.offsetWidth) / 2, behavior: 'smooth' });
+          }
         });
       }, { rootMargin: '-40% 0px -55% 0px' });
       Object.keys(byId).forEach(function (id) {
