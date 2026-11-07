@@ -34,3 +34,6 @@ correct person and that you're comfortable using it before treating the site as 
 - **bike-zhang**: only ~202x230 available (third-party workshop page); a higher-res photo would be better.
 - **rosario-scalise**: source was 150x150; replace with a larger headshot if you have one.
 - **arjun-krishna** / **michael-lutter**: transparent-background PNGs (render fine inside the circular avatar).
+
+## alphaXiv upload instructions (hover popup)
+- **alphaxiv-step1-publish.webp** / **alphaxiv-step2.png**: screenshots of alphaxiv.org (homepage Publish button; Publish dialog), supplied by the organizers with the alphaXiv camera-ready instructions.

@@ -318,7 +318,8 @@ a:focus-visible, .btn:focus-visible {
 .tip-trigger:hover, .tip-trigger:focus-visible { background: var(--blue); color: var(--bg); outline: none; }
 .tip-panel {
   position: absolute; z-index: 20; left: 50%; top: calc(100% + 8px);
-  width: min(420px, calc(100vw - 32px)); transform: translateX(-50%);
+  width: min(480px, calc(100vw - 32px)); transform: translateX(-50%);
+  max-height: min(78vh, 720px); overflow-y: auto;
   display: flex; flex-direction: column; gap: 10px;
   padding: 16px 18px; font-size: 0.92rem; font-weight: 400; line-height: 1.5;
   color: var(--ink); background: var(--bg);
@@ -330,6 +331,10 @@ a:focus-visible, .btn:focus-visible {
 .tip-panel::before { content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }
 .tip:hover .tip-panel, .tip:focus-within .tip-panel { visibility: visible; opacity: 1; }
 .tip-step { display: block; }
+.tip-img {
+  display: block; width: 100%; height: auto; margin-top: 8px;
+  border: 1px solid var(--line); border-radius: 3px;
+}
 @media (max-width: 600px) {
   .notice { padding: 16px; }
   .tip { position: static; }
