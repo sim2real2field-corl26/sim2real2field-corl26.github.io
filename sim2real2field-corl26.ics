@@ -8,9 +8,17 @@ DTSTAMP:20261108T000000Z
 DTSTART:20261112T200000Z
 DTEND:20261113T000000Z
 SUMMARY:Sim2Real2Field Workshop @ CoRL 2026
-LOCATION:Hilton Austin\, Salon E (4th floor)\, 500 E 4th St\, Austin\, TX 78701
-DESCRIPTION:Sim-to-Real-to-Field: The Science of Transfer — half-day works
- hop at CoRL 2026. https://sim2real2field-corl26.github.io/
+LOCATION:Hilton Austin\, Salon E (4th floor)\, 500 E 4th St\, Austin\, TX 7
+ 8701
+GEO:30.26510;-97.73828
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS="500 E 4th St, Austin, TX 7
+ 8701";X-APPLE-RADIUS=25;X-TITLE="Hilton Austin, Salon E (4th floor)":geo:3
+ 0.26510,-97.73828
+DESCRIPTION:Sim-to-Real-to-Field: The Science of Transfer\, half-day worksh
+ op at CoRL 2026.\nRoom: Salon E\, 4th floor\, Hilton Austin.\nMap pin (30.
+ 26510\, -97.73828): https://www.google.com/maps/search/?api=1&query=30.265
+ 10\,-97.73828\nFloor plan: https://sim2real2field-corl26.github.io/images/
+ hilton-4th-floor-salon-e.png\nhttps://sim2real2field-corl26.github.io/
 URL:https://sim2real2field-corl26.github.io/
 END:VEVENT
 END:VCALENDAR
