@@ -353,3 +353,21 @@ a:focus-visible, .btn:focus-visible {
   .tip-step-2 { grid-template-columns: 1fr; }
   .tip-crop { width: 100%; height: auto; }
 }
+
+/* ===== Venue floor-plan popup (hover / focus on "Salon E, 4th floor") ===== */
+.floor-tip { position: relative; display: inline-block; }
+.floor-panel {
+  position: absolute; z-index: 20; left: 50%; top: calc(100% + 6px); transform: translateX(-50%);
+  width: 292px; max-width: calc(100vw - 32px); padding: 14px 16px 10px;
+  display: flex; flex-direction: column; gap: 6px; align-items: center;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(11, 58, 111, 0.16);
+  visibility: hidden; opacity: 0;
+  transition: opacity 0.15s ease 0.2s, visibility 0s linear 0.35s;
+}
+.floor-panel::before { content: ""; position: absolute; left: 0; right: 0; top: -8px; height: 8px; }
+.floor-tip:hover .floor-panel, .floor-tip:focus-within .floor-panel {
+  visibility: visible; opacity: 1; transition: opacity 0.15s ease, visibility 0s;
+}
+.floor-panel img { display: block; width: 100%; height: auto; background: #fff; }
+.floor-caption { font-size: 0.82rem; line-height: 1.4; color: var(--muted); text-align: center; }

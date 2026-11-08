@@ -37,3 +37,4 @@ correct person and that you're comfortable using it before treating the site as 
 
 ## alphaXiv upload instructions (hover popup)
 - **alphaxiv-step1-publish.webp** / **alphaxiv-step1-upload.png** / **alphaxiv-step2-add-poster.webp**: screenshots of alphaxiv.org (homepage Publish button; Publish dialog; paper page "Add poster"), supplied by the organizers with the alphaXiv camera-ready instructions.
+- **hilton-4th-floor-salon-e.png**: Hilton Austin 4th-floor plan with Salon E shaded, supplied by the organizers (venue popup).
