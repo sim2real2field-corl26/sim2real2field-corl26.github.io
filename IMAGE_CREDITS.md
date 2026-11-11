@@ -28,7 +28,8 @@ correct person and that you're comfortable using it before treating the site as 
 | claire-tomlin.jpg | Claire Tomlin | UC Berkeley | https://www2.eecs.berkeley.edu/Faculty/Homepages/tomlin.html |
 | amy-zhang.jpg | Amy Zhang | UT Austin | https://amyzhang.github.io/ (photo from UT ECE portrait) |
 | michael-lutter.png | Michael Lutter | Boston Dynamics | https://www.mlutter.eu/ |
-| zhongyu-li.png | Zhongyu Li | CUHK | https://www4.mae.cuhk.edu.hk/peoples/li-zhongyu/ |
+| antonio-loquercio.jpg | Antonio Loquercio | University of Pennsylvania | https://antonilo.github.io/ (profile_pic.jpg, cropped to a 400x400 head-and-shoulders square) |
+| zhongyu-li.png | Zhongyu Li | CUHK | https://www4.mae.cuhk.edu.hk/peoples/li-zhongyu/ | *(no longer on the program; file kept)*
 
 ## Notes / lower-quality sources to revisit
 - **bike-zhang**: only ~202x230 available (third-party workshop page); a higher-res photo would be better.
