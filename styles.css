@@ -425,3 +425,27 @@ a:focus-visible, .btn:focus-visible {
   .tl-t { font-size: 0.7rem; }
 }
 .notice-bottom { margin: 28px 0 0; max-width: none; }
+
+/* ===== Accepted papers: odds beside evens ===== */
+.pl-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 18px; align-items: start; }
+.pl-col { border-top: 3px solid; padding-top: 10px; }
+.pl-odd { border-color: var(--gold); }
+.pl-even { border-color: var(--blue); }
+.pl-head { margin: 0 0 10px; font-size: 1.25rem; color: var(--blue); display: flex; flex-direction: column; gap: 2px; }
+.pl-sub { font-size: 0.8rem; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; }
+.pl-list { list-style: none; margin: 0; padding: 0; }
+.pl-list li {
+  display: grid; grid-template-columns: 2.6em minmax(0, 1fr); gap: 10px; align-items: baseline;
+  padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; line-height: 1.4;
+}
+.pl-list li:last-child { border-bottom: 0; }
+.pl-id {
+  justify-self: start; min-width: 2.2em; padding: 1px 6px; border-radius: 3px; text-align: center;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.85rem; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.pl-odd .pl-id { background: #fbefc8; color: #6b4d05; }
+.pl-even .pl-id { background: #dfe8f3; color: var(--blue); }
+@media (max-width: 640px) {
+  .pl-cols { grid-template-columns: 1fr; }
+}
