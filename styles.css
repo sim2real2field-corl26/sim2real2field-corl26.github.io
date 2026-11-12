@@ -424,3 +424,4 @@ a:focus-visible, .btn:focus-visible {
   .tl-blk { padding-inline: 6px; font-size: 0.78rem; }
   .tl-t { font-size: 0.7rem; }
 }
+.notice-bottom { margin: 28px 0 0; max-width: none; }
